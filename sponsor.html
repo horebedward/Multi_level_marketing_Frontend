@@ -1,0 +1,140 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+            FRC | Verify Sponsor        
+        </title>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="js/validateRegistration.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="js/passwordMeter.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="js/dashboard.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/Animate.css" />
+<link rel="stylesheet" href="orgchart/jquery.orgchart.css" />
+</head>
+<body>
+<div class="topcontent" style="background-color:white;">
+<div class="carouselcontent" style="background-color: #F7F7F7">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+<div style="display:flex;margin-top:3px;">
+<div style="width:30%;">
+<a class="navbar-brand" href="/">
+<img src="images/logo.png" style="height:60px;" />
+</a>
+</div>
+<div style="width:70%;">
+<a href="in.html">
+<button class="btn btn-info float-right btn-sm" style="margin-top:10px;">
+<i class="fa fa-sign-in"> &nbsp; Sign in</i>
+</button>
+<div style="clear:both;"></div>
+</a>
+</div>
+<div style="clear:both;"></div>
+ </div>
+</div>
+</div>
+</div>
+<nav style="margin-top:0px;padding-left:15px;" class="navbar navbar-fixed-top
+                                    navbar-expand-md navbar-dark bg-light">
+<a class="navbar-brand" href="/">
+<h style="color:black;font-weight:normal;" class="logotext">Menu</h>
+</a>
+<button onclick="if (!window.__cfRLUnblockHandlers) return false; addMarginTopClass()" id="navbutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-cf-modified-83e2e0752b6262f648454c62-="">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarText" style="width:90%;">
+<ul class="navbar-nav mr-auto" style="width:auto;">
+<li class="nav-item">
+<a class="nav-link" href="index.html#aboutus">About Fund Raisers Community</a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index.html#ideology">Ideology</a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="index.html#testimonials">Testimonials</a>
+<hr />
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div id="response"></div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-12" style="margin-top:90px;text-align:center;">
+<h2 style="font-weight:bold;">Please verify the sponsor</h2>
+<br />
+</div>
+</div>
+<div class="row">
+<div class="col-lg-4 offset-lg-4" style="background-color:white; padding:0px;text-align:center;border: 1px solid #cecace;">
+<div id="error_message">
+</div>
+<div style="border:0px solid #cecace;padding:10px;border-radius:10px;margin-bottom:0px;">
+<h style="font-weight:bold;color:#000;">
+Sponsor or upliner required to proceed to registration
+</h>
+<br /><br />
+<form action="up.html" method="post" autocomplete="off">
+<div class="form-group profile">
+<label for="Sponsor">Enter your sponsor's username</label>
+<input style="background-color:transparent;" class="form-control" name="Sponsor" value="" id="Sponsor" type="text" autofocus required />
+<div id="sponsor_tick">
+</div>
+<div id="error_sponsor"></div>
+</div>
+<br />
+<input type="hidden" name="verified" value="yes">
+<input class="btn btn-primary btn-md float-right" type="submit" name="Proceed" value=" &nbsp; Proceed &nbsp;" id="Proceed" />
+</form>
+<div style="clear:both;"></div>
+<hr />
+<div style="width:100%; display:flex; margin-top:10px;">
+<div style="width:50%; text-align:left;">
+<a href="in.html">Log in</a>
+</div>
+<div style="width:50%; text-align:right;">
+<a style="width:100%;" href="fpass.html">
+Forgot Password
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br /><br /><br />
+</div> <div style="clear:both;">
+</div>
+<div class="footer container-fluid">
+<div class="row" style="background-color:#12b3e2;font-weight:normal;">
+<div class="col-md-12" style="padding-top:10px;">
+Fund Raisers Community Stokvel © 2020 </div>
+</div>
+</div>
+<script src="/orgchart/jquery.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="/orgchart/jquery.orgchart.min.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="/js/tree.js" type="83e2e0752b6262f648454c62-text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="83e2e0752b6262f648454c62-|49" defer=""></script></body>
+</html>

@@ -1,0 +1,224 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+            FRC | Send Cash        
+        </title>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="js/validateRegistration.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="js/passwordMeter.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="js/dashboard.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/Animate.css" />
+<link rel="stylesheet" href="orgchart/jquery.orgchart.css" />
+</head>
+<body>
+<div class="topcontent" style="background-color:white;">
+<div class="carouselcontent" style="background-color: #F7F7F7">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+<div style="display:flex;margin-top:3px;">
+<div style="width:30%;">
+<a class="navbar-brand" href="/">
+<img src="images/logo.png" style="height:60px;" />
+</a>
+</div>
+<div style="width:70%;">
+<a href="logout.html">
+<button class="btn btn-outline-danger float-right btn-sm" style="margin-top:10px;">
+<i class="fa fa-sign-out"> &nbsp; Sign Out</i>
+</button>
+<div style="clear:both;"></div>
+</a>
+</div>
+<div style="clear:both;"></div>
+ </div>
+</div>
+</div>
+</div>
+<nav style="margin-top:0px;padding-left:15px;" class="navbar navbar-fixed-top
+                                    navbar-expand-md navbar-dark bg-light">
+<a class="navbar-brand" href="/">
+<h style="color:black;font-weight:normal;" class="logotext">Menu</h>
+</a>
+<button onclick="if (!window.__cfRLUnblockHandlers) return false; addMarginTopClass()" id="navbutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-cf-modified-27a8b13d929d25f77d3c15d4-="">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarText" style="width:90%;">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="dashboard.html">Dashboard<span class="sr-only">(current)</span></a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="link.html">Sponsor Link</a>
+<hr />
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Payments</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="sendcash.html">Sent</a>
+<a class="dropdown-item" href="receivecash.html">Received</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Family</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="alldownliners.html">All downliners</a>
+<a class="dropdown-item" href="structure.html">Team Structure</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">News feeds</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Achievements gallery</a>
+<a class="dropdown-item" href="#">Announcements</a>
+</div>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="testimonials.html">Add Testimony</a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="account.html">My account</a>
+<hr />
+</li>
+
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="container dash" style="margin-top:130px;">
+<div class="row">
+<div class="col-md-12" style="width:100%;">
+<div class="dright">
+<div style="display:flex;background-color:#fff9e8;font-size:14px;color:#013305;padding:10px;margin: 10px;border:1px solid #cecace;">
+<div class="" style="width:50%;"><h style="font-weight:600;">/Receivecash/</h></div>
+<div class="" style="width:50%;float:right;right:0;text-align:right;"><img src="images/user.png" style="height:20px;" /><h style="font-weight:600;">&nbsp;horeb</h></div>
+<div style="clear:both"></div>
+</div>
+</div>
+<p>This is the history of transactions paid BY you by downliners.</p>
+</div>
+</div>
+<div style="padding:5px;background-color:#fff!important;">
+<div id="error_message">
+<div class="container" style="background-color:transparent!important; padding:15px;overflow:auto">
+<div class="row">
+<div class="col-sm-4">
+<table class="bordered" style="width:100%;padding:10px;">
+<tr>
+<td style="padding:5px;font-weight:bold;background-color:#037373;color:white;">
+<h>1. Joining contribution</h> </td>
+</tr>
+<tr>
+<td style="padding:5px;">
+Time created 30 Mar 2020 01:44:49 </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Payment Status </th>
+</tr>
+<tr>
+<td style="padding:5px;color:red;font-weight:bold;">
+Payment Pending <div style="border:opx solid red; font-weight:bold; font-size:15px;" id="timer1">
+</div>
+<script type="27a8b13d929d25f77d3c15d4-text/javascript">
+                                                    $(countdown("2020/03/31 01:44:49","1"));
+                                                </script>
+</td>
+</tr>
+<tr>
+ <th style="padding:5px;">
+Contribution </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+R300.00 </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Upliner Receiving </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+Kelis </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Bank </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+Capitec Bank </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Acc Holder </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+Miss EL Mlambo </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Acc Number </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+1639788466 </td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Branch code </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+</td>
+</tr>
+<tr>
+<th style="padding:5px;">
+Contacts </th>
+</tr>
+<tr>
+<td style="padding:5px;">
+0614887482 </td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div> <div style="clear:both;">
+</div>
+<div class="footer container-fluid">
+<div class="row" style="background-color:#12b3e2;font-weight:normal;">
+<div class="col-md-12" style="padding-top:10px;">
+Fund Raisers Community Stokvel © 2020 </div>
+</div>
+</div>
+<script src="orgchart/jquery.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="orgchart/jquery.orgchart.min.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="js/tree.js" type="27a8b13d929d25f77d3c15d4-text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="27a8b13d929d25f77d3c15d4-|49" defer=""></script></body>
+</html>

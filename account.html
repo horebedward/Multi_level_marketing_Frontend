@@ -1,0 +1,248 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+            FRC | My Account        
+        </title>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="js/validateRegistration.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="js/passwordMeter.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="js/dashboard.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/Animate.css" />
+<link rel="stylesheet" href="orgchart/jquery.orgchart.css" />
+</head>
+<body>
+<div class="topcontent" style="background-color:white;">
+<div class="carouselcontent" style="background-color: #F7F7F7">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+<div style="display:flex;margin-top:3px;">
+<div style="width:30%;">
+<a class="navbar-brand" href="/">
+<img src="images/logo.png" style="height:60px;" />
+</a>
+</div>
+<div style="width:70%;">
+<a href="logout.html">
+<button class="btn btn-outline-danger float-right btn-sm" style="margin-top:10px;">
+<i class="fa fa-sign-out"> &nbsp; Sign Out</i>
+</button>
+<div style="clear:both;"></div>
+</a>
+</div>
+<div style="clear:both;"></div>
+ </div>
+</div>
+</div>
+</div>
+<nav style="margin-top:0px;padding-left:15px;" class="navbar navbar-fixed-top
+                                    navbar-expand-md navbar-dark bg-light">
+<a class="navbar-brand" href="/">
+<h style="color:black;font-weight:normal;" class="logotext">Menu</h>
+</a>
+<button onclick="if (!window.__cfRLUnblockHandlers) return false; addMarginTopClass()" id="navbutton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" data-cf-modified-2491b0df8575b69ceecb5d4e-="">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarText" style="width:90%;">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="dashboard.html">Dashboard<span class="sr-only">(current)</span></a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="link.html">Sponsor Link</a>
+<hr />
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Payments</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="sendcash.html">Sent</a>
+<a class="dropdown-item" href="receivecash.html">Received</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Family</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="alldownliners.html">All downliners</a>
+<a class="dropdown-item" href="structure.html">Team Structure</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">News feeds</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Achievements gallery</a>
+<a class="dropdown-item" href="#">Announcements</a>
+</div>
+</li>
+<li class="nav-item">
+ <a class="nav-link" href="testimonials.html">Add Testimony</a>
+<hr />
+</li>
+<li class="nav-item">
+<a class="nav-link" href="account.html">My account</a>
+<hr />
+</li>
+
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div>
+</div>
+<div class="container" style="background-color:transparent!important; padding:15px;margin-top:70px;">
+<div class="row">
+<div class="col-md-12">
+<div style="width:99%;background-color:white;padding:20px; border-radius:10px;">
+<h5 style="font-weight:bold;">Who Am I</h5><br />
+<div id="error_message">
+</div>
+<br />
+<form action="" method="post" autocomplete="off" novalidate>
+<div class="form-group profile">
+<input class="form-control" name="Firstname" value="" id="Firstname" type="text" required />
+<div id="firstname_tick">
+</div>
+<label>What's your name</label>
+<div id="error_name"></div>
+</div>
+<br />
+<div class="form-group profile">
+<input class="form-control" name="Lastname" value="" id="Lastname" type="text" required />
+<div id="lastname_tick">
+</div>
+<label>What's your surname</label>
+<div id="error_lastname"></div>
+</div>
+<br />
+
+<div class="form-group profile">
+<input class="form-control" name="MobileNumber" value="" id="MobileNumber" value="+27" type="text" required />
+<div id="mobile_tick">
+</div>
+<label>What's your contact number</label>
+<div id="error_mobilenumber"></div>
+</div>
+
+<br />
+<input class="btn btn-info btn-block" type="button" name="UpdateAccountDetails" value="Save Changes" id="UpdateAccountDetails" />
+</form>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div style="width:99%;background-color:white;padding:20px; border-radius:10px;">
+<hr /><br />
+<h5 style="font-weight:bold;">My login password</h5><br />
+<div id="error_message_1">
+</div>
+<form action="" method="post" autocomplete="off" novalidate>
+
+<div style="background-color:#fff;padding:10px;border-radius:10px;margin-bottom:20px;">
+<div class="form-group profile">
+<input class="form-control" name="Password" value="" id="Password" type="password" required />
+<div id="password_tick">
+</div>
+<label>What's your new password</label>
+<div id="error_password_2"></div>
+<div id="pass" style="display:none;">
+<div class="error_password" id="error_password">
+</div>
+<div class="showpassword">
+<img src="images/showpassword.png" id="ShowPassword" />
+</div>
+</div>
+</div>
+<br />
+<div class="form-group profile">
+<input class="form-control" name="ConfirmPassword" value="horeb" id="ConfirmPassword" type="password" required />
+<div id="confirmpassword_tick">
+</div>
+<label>Confirm your new password</label>
+<div id="error_confirmpassword"></div>
+</div>
+</div>
+<input class="btn btn-info btn-block" type="button" name="updateMemberPassword" value="Save New Password" id="updateMemberPassword" />
+</form>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div style="width:99%;background-color:white;padding:20px; border-radius:10px;">
+<hr /><br />
+<h5 style="font-weight:bold;">My account</h5><br />
+<div id="error_message_2">
+</div>
+<br />
+<form action="" method="post" autocomplete="off" novalidate>
+<div class="form-group profile">
+<input class="form-control" name="AccHolder" value="" id="AccHolder" type="text" required />
+<div id="accholder_tick">
+</div>
+<label>Owner of the account</label>
+<div id="error_accholder"></div>
+</div>
+<div class="form-group profile">
+<input class="form-control" name="Bank" value="" id="Bank" type="text" required />
+
+<div id="bank_tick">
+</div>
+<label>Banking Institution</label>
+<div id="error_bank"></div>
+</div>
+<div class="form-group profile">
+<input class="form-control" name="AccNumber" value="" id="AccNumber" type="text" required />
+<div id="accnumber_tick">
+</div>
+<label>My account number</label>
+<div id="error_accnumber"></div>
+</div>
+<div class="form-group profile">
+<input class="form-control" name="branchCode" value="" id="branchCode" type="text" required />
+<div id="branchcode_tick">
+</div>
+<label>My branch code</label>
+<div id="error_branchcode"></div>
+</div>
+<input class="btn btn-info btn-block" type="button" name="UpdateBankingDetails" value="Save New Banking Details" id="UpdateBankingDetails" />
+</form>
+<br />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both;">
+</div>
+<div class="footer container-fluid">
+<div class="row" style="background-color:#12b3e2;font-weight:normal;">
+<div class="col-md-12" style="padding-top:10px;">
+Fund Raisers Community Stokvel © 2020 </div>
+</div>
+</div>
+<script src="orgchart/jquery.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="orgchart/jquery.orgchart.min.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="js/tree.js" type="2491b0df8575b69ceecb5d4e-text/javascript"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="2491b0df8575b69ceecb5d4e-|49" defer=""></script></body>
+</html>
